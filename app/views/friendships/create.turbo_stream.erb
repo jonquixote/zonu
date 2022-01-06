@@ -1,0 +1,9 @@
+ <% if @friendship.errors.present? %>
+<% else %>
+   
+
+   <%= turbo_stream.replace :new_friendship do %>
+      <%= turbo_frame_tag :new_friendship %>
+   <% end %>
+
+    <% end %>

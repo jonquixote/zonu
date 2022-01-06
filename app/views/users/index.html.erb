@@ -1,0 +1,11 @@
+<% @users.each do |user| %>
+  <p data-turbo="false">
+    <%= user.email %><%= button_to "Add Friend", friendships_path(friend_id: user, user_id: current_user.id), method: :post %>
+  </p>
+  <p>
+  <%= button_to 'New friendship', friendships_path(friend_id: user),
+      class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium",
+      data: { 'turbo-frame': 'new_friendship', method: :post }
+    %>
+  </p>
+<% end %>
