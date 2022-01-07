@@ -1,8 +1,8 @@
 class FriendshipsController < ApplicationController
   
   def create
-    @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
-    #@friendship = Friendship.new.current_user.friendships.build(:friend_id => params[:friend_id])
+    @friendship = current_user.friendships.build(:user_b => params[:user_b])
+    #@friendship = Friendship.new.current_user.friendships.build(:user_b => params[:user_b])
 
     respond_to do |format|
       if @friendship.save
